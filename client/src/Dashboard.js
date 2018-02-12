@@ -61,7 +61,7 @@ class Dashboard extends Component {
   calcReport() {
     const data = this.state.data;
     const valid = data && data.entities && data.entities.shift;
-    if (!valid) return { error: 'MicroMachine Metrics data was invalid!' };
+    if (!valid) return { error: 'MicroMachine Metrics data was invalid! Please make sure to set MM_AUTH="Bearer [token]" in your project root .env file. ' };
 
     const shifts = Object.keys(data.entities.shift);
     const weekend1 = shifts.find(shift => (
