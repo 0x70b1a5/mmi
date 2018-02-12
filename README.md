@@ -1,11 +1,11 @@
-#MicroMachine Metrics
-###Install
+# MicroMachine Metrics
+### Install
 ```
 cat 'MM_AUTH="bearer [YOUR_MACHINEMETRICS_TOKEN]"' > .env
 npm i && cd client && npm i
 ```
 
-###Run
+### Run
 ```
 node server.js
 cd client && npm start
