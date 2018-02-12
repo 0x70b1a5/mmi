@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -25,4 +26,30 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.dash {
+  margin: 1rem;
+  display: inline-grid;
+  grid: 150px / 200px 200px;
+  grid-gap: 2em;
+}
+
+.dial {
+  padding: 0 1em;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px #555;
+  transition: box-shadow 0.2s ease;
+}
+
+.dial:hover {
+  box-shadow: 1px 1px 10px #555;
+}
+
+.dial a {
+  line-height: 2rem;
+}
+
+.large {
+  font-size: 2em;
 }
