@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Progress from 'react-progressbar';
+import moment from 'moment';
 
 class Dial extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class Dial extends Component {
   render() {
     const pct = <p>{Math.round(this.state.data.val * 1000) / 10}%</p>;
     const exact = <p>
-      {this.state.data.timeInCycle} / {this.state.data.allTime}
+      In Cycle: {moment.duration(this.state.data.timeInCycle).humanize()}<br/>
+      All Time: {moment.duration(this.state.data.allTime).humanize()}
     </p>;
 
     const red = Math.round(255 - this.state.data.val * 255);
