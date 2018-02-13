@@ -1,13 +1,13 @@
 # MicroMachine Metrics
 ### Install
 ```
-cat 'MM_AUTH="bearer [YOUR_MACHINEMETRICS_TOKEN]"' > .env
-npm i && cd client && npm i
+cat 'REACT_APP_MM_AUTH="bearer [YOUR_MACHINEMETRICS_TOKEN]"' > .env
+npm i 
 ```
 
 ### Run
 ```
-node server.js
-cd client && npm start
+npm start
 ```
+
 Script should open your default browser, but if not, navigate to `localhost:3000`.

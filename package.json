@@ -1,29 +1,20 @@
 {
   "name": "mm",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "axios": "^0.17.1",
     "dotenv": "^5.0.0",
-    "express": "^4.16.2",
     "moment": "^2.20.1",
-    "path": "^0.12.7",
-    "request": "^2.83.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-progressbar": "^15.4.1",
+    "react-scripts": "1.1.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/0x70b1a5/mmi.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/0x70b1a5/mmi/issues"
-  },
-  "homepage": "https://github.com/0x70b1a5/mmi#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }

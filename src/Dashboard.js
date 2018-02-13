@@ -20,18 +20,22 @@ class Dashboard extends Component {
     if (!this.state.loading) this.setState({ loading: true });
 
     const start = moment().subtract(7, 'days').startOf('day');
-    axios.post('/data', {
-      endpoint: '/reports/production/',
-      start: start.toISOString(),
-      end: start.add(7, 'days').toISOString(),
-      data: [
-        { metric: 'timeInCycle' },
-        { metric: 'allTime' }
-      ],
-      groupBy: [
-        { group: 'day' },
-        { group: 'shift' } 
-      ]
+    axios({
+      url: 'https://api-demo.machinemetrics.com/reports/production', 
+      method: 'post',
+      headers: { 'Authorization': process.env.REACT_APP_MM_AUTH },
+      data: {
+        start: start.toISOString(),
+        end: start.add(7, 'days').toISOString(),
+        data: [
+          { metric: 'timeInCycle' },
+          { metric: 'allTime' }
+        ],
+        groupBy: [
+          { group: 'day' },
+          { group: 'shift' } 
+        ]
+      }
     }).then(res => {
       this.setState({ 
         data: res.data,
@@ -61,7 +65,7 @@ class Dashboard extends Component {
   calcReport() {
     const data = this.state.data;
     const valid = data && data.entities && data.entities.shift;
-    if (!valid) return { error: 'MicroMachine Metrics data was invalid! Please make sure to set MM_AUTH="Bearer [token]" in your project root .env file. ' };
+    if (!valid) return { error: 'MicroMachine Metrics data was invalid! Please make sure to set REACT_APP_MM_AUTH="Bearer [token]" in your project root .env file. ' };
 
     const shifts = Object.keys(data.entities.shift);
     const weekend1 = shifts.find(shift => (
